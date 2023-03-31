@@ -3,7 +3,7 @@ import functions
 
 
 if __name__ == '__main__':
-    with psycopg2.connect(database="PyDB", user="postgres", password="300589iI") as conn:
+    with psycopg2.connect(database="PyDB", user="postgres", password="postgres") as conn:
         with conn.cursor() as cur:
             client_fields = {'id': 'SERIAL PRIMARY KEY', 'name': 'text NOT NULL', 'surname': 'text NOT NULL'}
             info_fields = {'email': 'VARCHAR[40]', 'phone': 'integer', 'client_id': 'integer NOT NULL REFERENCES client(id)'}
